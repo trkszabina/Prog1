@@ -23,6 +23,7 @@ int main()
         vr[vr.size()-1].set_fill_color(Color::red);
         win.attach(vr[vr.size()-1]);
     }
+	
     win.wait_for_button();
 
     Image kep1(Point(600,0),"seal.jpeg");
