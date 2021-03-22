@@ -45,12 +45,12 @@ Axis xa {Axis::x, Point{20,375}, 300, 10, "x tengely"};
  poly_rect.add(Point{50,250});
  poly_rect.set_fill_color(Color::green);
  win.attach(poly_rect);
+ win.wait_for_button();
  
 	
  Rectangle r {Point{50,150}, 100, 50};
  win.attach(r);
  win.set_label("My window #6");
- win.wait_for_button();
  r.set_fill_color(Color::yellow);
  win.set_label("My window #7");
  win.wait_for_button();
