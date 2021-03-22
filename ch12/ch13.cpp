@@ -10,35 +10,35 @@ int main()
 	int max_height = 1000;
 	Simple_window win{Point{100,100},max_width,max_height,"Chapter 13 Drill"};
 	
-    Lines grid;
+    
     int x_size = 100;
-    int y_size = 100;
+    int y_size = 100; 
+    Lines grid;
 	
     for (int x = 100; x<max_width; x+=100) 
     {
-        grid.add(Point(x,0),Point(x,max_height-200));
+        grid.add(Point{x,0},Point(x,max_height-200));
     }
-    for(int y=grid_y;y<win_y;y+=grid_y)
+    for(int y=100;y<max_height;y+=100)
 	{
-		grid.add(Point{0,y},Point(win_x,y));
+	grid.add(Point{0,y},Point(win_x,y));
 	}
     win.attach(grid);
-    win.wait_for_button();
 
 	Vector_ref<Graph_lib::Rectangle> vr;
     for (int i = 0; i<8; ++i) {
-        vr.push_back(new Rectangle(Point(i*100,i*100),100,100));
+        vr.push_back(new Rectangle(Point{i*100,i*100},100,100));
         vr[i].set_fill_color(Color::red);
         win.attach(vr[i]);
     }
 	
     win.wait_for_button();
 
-    Image kep1(Point(600,0),"seal.jpeg");
+    Image kep1(Point{600,0},"seal.jpeg");
     win.attach(kep1);
-    Image kep2(Point(500,200),"mario.jpeg");
+    Image kep2(Point{500,200},"mario.jpeg");
     win.attach(kep2);
-    Image kep3(Point(0,600),"dog.jpeg");
+    Image kep3(Point{0,600},"dog.jpeg");
     win.attach(kep3);
     win.wait_for_button();
 
