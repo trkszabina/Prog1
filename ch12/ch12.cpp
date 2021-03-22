@@ -12,21 +12,18 @@ Axis xa {Axis::x, Point{20,375}, 300, 10, "x tengely"};
  xa.set_color(Color::blue);
  xa.label.set_color(Color::blue);
  win.attach(xa);
- win.set_label("My window #2");
  win.wait_for_button();
 
  Axis ya {Axis::y, Point{20,375}, 300, 10, "y tengely"};
  ya.set_color(Color::blue);
  ya.label.set_color(Color::blue);
  win.attach(ya);
- win.set_label("My window #3");
  win.wait_for_button();
 
  Function sine {sin,0,100,Point{20,300},1000,50,50};
  win.attach(sine);
- win.set_label("My window #4");
- win.wait_for_button();
  sine.set_color(Color::black);
+ win.wait_for_button();
 	
  Polygon poly;
  poly.add(Point{50,350});
@@ -35,7 +32,6 @@ Axis xa {Axis::x, Point{20,375}, 300, 10, "x tengely"};
  poly.set_color(Color::red);
  poly.set_style(Line_style::dash);
  win.attach(poly);
- win.set_label("My window #5");
  win.wait_for_button();
 
  Closed_polyline poly_rect;
@@ -49,10 +45,8 @@ Axis xa {Axis::x, Point{20,375}, 300, 10, "x tengely"};
  
 	
  Rectangle r {Point{50,150}, 100, 50};
- win.attach(r);
- win.set_label("My window #6");
  r.set_fill_color(Color::yellow);
- win.set_label("My window #7");
+ win.attach(r);
  win.wait_for_button();
 
  Text t {Point{10,25}, "Hello, graphical world!"};
@@ -60,20 +54,17 @@ Axis xa {Axis::x, Point{20,375}, 300, 10, "x tengely"};
  t.set_font(Font::times_bold);
  t.set_font_size(20);
  win.attach(t);
- win.set_label("My window #8");
  win.wait_for_button();
 
 
  Image ii {Point{100,50},"image.jpg"};
  win.attach(ii);
- win.set_label("My window #9");
  win.wait_for_button();
 
 
  Circle c {Point{100,200},50};
  c.set_fill_color(Color::green);
  win.attach(c);
- win.set_label("My window #10");
  win.wait_for_button();
  
  
