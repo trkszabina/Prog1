@@ -21,7 +21,7 @@ int main()
     }
     for(int y=100;y<max_height;y+=100)
 	{
-	grid.add(Point{0,y},Point(win_x,y));
+	grid.add(Point{0,y},Point(max_width,y));
 	}
     win.attach(grid);
 
@@ -42,7 +42,7 @@ int main()
     win.attach(kep3);
     win.wait_for_button();
 
-    Image kep4(Point(0,0),"logo.jpeg");
+    Image kep4(Point{0,0},"logo.jpeg");
     win.attach(kep4);
     win.wait_for_button();
 	
@@ -57,7 +57,7 @@ int k=0;
 		if(k==7)
 		{
 			k=0;
-			kep4.move(-700,-700);
+			kep4.move(0,0);
 		}
 		else
 		{
