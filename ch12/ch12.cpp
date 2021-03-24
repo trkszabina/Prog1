@@ -21,8 +21,8 @@ Axis xa {Axis::x, Point{20,375}, 300, 10, "x tengely"};
  win.wait_for_button();
 
  Function sine {sin,0,100,Point{20,300},1000,50,50};
- win.attach(sine);
  sine.set_color(Color::black);
+ win.attach(sine);
  win.wait_for_button();
 	
  Polygon poly;
