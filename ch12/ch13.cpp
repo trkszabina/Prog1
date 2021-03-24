@@ -50,20 +50,16 @@ int k=0;
 	while(true)
 	{
 		for(int i=0;i<7;i++)
-		{
-			kep4.move(100,0);
-			win.wait_for_button();
-		}
-		if(k==7)
-		{
-			k=0;
-			kep4.move(0,0);
-		}
+		{ kep4.move(100,0);
+		  win.wait_for_button();}
+		
+		if(k!=7)
+		{kep.move(0,100);
+		 k++;}
+		
 		else
-		{
-			kep.move(-700,100);
-			k++;
-		}
+		{k=0;
+		 kep4.move(0,0);}
 		win.wait_for_button();
 	}
 	
