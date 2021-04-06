@@ -10,10 +10,10 @@ struct Person
 
 	public:
 	Person(){};
-	Person(string n1, string n2, int a)
+	Person(string f, string l, int a)
 	{
-		first_name=n1;
-		last_name=n2;
+		first_name=f;
+		last_name=l;
 		age=a;
 	}
 
