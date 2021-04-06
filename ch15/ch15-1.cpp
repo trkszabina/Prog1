@@ -7,7 +7,7 @@ double one(double x) {return 1;}
 double slope(double x) {return x/2;}
 double square(double x){return x*x;}
 double cos_slope(double x){return  slope(x)+cos(x);}
-double cos (double x) {return cos(x);}
+double coss (double x) {return cos(x);}
 
 int main()
 {
@@ -42,7 +42,7 @@ int main()
 	Function s3(square,range_min,range_max,origo,points,x_scaling,y_scaling);
 	win.attach(s3);
 	
-	Function s4(cos, range_min, range_max, origo, points, x_scaling, y_scaling);
+	Function s4(coss, range_min, range_max, origo, points, x_scaling, y_scaling);
 	cosinus.set_color(Color::blue);
 	win.attach(s4);
 	
