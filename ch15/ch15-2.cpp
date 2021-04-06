@@ -45,8 +45,6 @@ istream& operator>>(istream& is, Person& p)
 
 	if(!is) error("input error...");
 
-	p = Person(f, l, a);
-
 	return is;
 }
 
