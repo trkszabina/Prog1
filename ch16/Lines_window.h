@@ -15,20 +15,6 @@ struct Lines_window : Graph_lib::Window
 	Button color_button;
 	Button linestyle_button;
 	
-	static void cb_red(Address, Address pw) {reference_to<Lines_window>(pw).red_pressed();}
-	static void cb_dark_red(Address, Address pw){reference_to<Lines_window>(pw).dark_red_pressed();}
-	static void cb_blue(Address, Address pw) {reference_to<Lines_window>(pw).blue_pressed();}
-	static void cb_dark_blue(Address, Address pw) {reference_to<Lines_window>(pw).dark_blue_pressed();}
-	static void cb_black(Address, Address pw){reference_to<Lines_window>(pw).black_pressed();}
-	static void cb_white(Address, Address pw){reference_to<Lines_window>(pw).white_pressed();}
-	static void cb_color_menu(Address, Address pw){reference_to<Lines_window>(pw).color_pressed();}
-
-	static void cb_line_menu(Address, Address pw){reference_to<Lines_window>(pw).line_pressed();}
-	static void cb_solid(Address, Address pw){reference_to<Lines_window>(pw).solid_pressed();}
-	static void cb_dash(Address, Address pw){reference_to<Lines_window>(pw).dash_pressed();}
-	static void cb_dot(Address, Address pw){reference_to<Lines_window>(pw).dot_pressed();}
-	static void cb_dashdot(Address, Address pw){reference_to<Lines_window>(pw).dash_dot_pressed();}
-	static void cb_dashdotdot(Address, Address pw){reference_to<Lines_window>(pw).dash_dot_dot_pressed();}
 
   
   private:
@@ -42,4 +28,24 @@ struct Lines_window : Graph_lib::Window
 
 	void next();
 	void quit();
+	
+	
+	
+	void red_pressed() { change_c(Color::red); hide_color(); }
+	void blue_pressed() { change_c(Color::blue); hide_color(); }
+	void black_pressed() { change_c(Color::black); hide_color(); }
+	
+	void dot_pressed() { change_s(Line_style::dot), hide_style(); }
+	void dash_pressed() { change_s(Line_style::dash), hide_style(); }
+	void solid_pressed() { change_s(Line_style::solid), hide_style(); }
+	
+	void color_pressed() { color_button.hide(); color_menu.show(); }
+	void style_pressed(){ style_button.hide(); style_menu.show(); }
+	
+	void change_c(Color c) { lines.set_color(c); }
+	void change_s(Line_style s) { lines.set_style(s); }
+	void hide_color() { color_menu.hide(); color_button.show(); }	
+	void hide_style() { style_menu.hide(); style_button.show(); }
+
+	
 };
