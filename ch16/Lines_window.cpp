@@ -13,9 +13,12 @@ quit_button{Point{x_max()-150,0}, 150, 40, "Quit",
  xy_out{Point{100,0}, 100, 40, "current (x,y):"},
 
 color_menu{Point{x_max()-70,40},70,20,Menu::vertical,"color"},
-color_button{Point{x_max()-140,40}, 140, 45, "color menu", cb_color_menu},
 line_menu{Point{x_max()-70,60},70,20,Menu::vertical,"linestyle"},
-linestyle_button{Point{x_max()-140,85},140,45,"linestyle menu",cb_line_menu}
+color_button{Point{x_max() - 80, 30}, 80, 20, "color menu",
+        [](Address, Address pw) {reference_to<Lines_window>(pw).color_pressed();},
+style_button{Point{0, 30}, 80, 20, "style menu",
+        [](Address, Address pw) {reference_to<Lines_window>(pw).style_pressed();}
+             
 
 {
     attach(next_button);
@@ -25,18 +28,36 @@ linestyle_button{Point{x_max()-140,85},140,45,"linestyle menu",cb_line_menu}
     attach(xy_out);
     attach(lines);
 
-    color_menu.attach(new Button{Point{0,0},0,0,"red",cb_red});
-    color_menu.attach(new Button{Point{0,0},0,0,"scarlet",cb_dark_red});
-    color_menu.attach(new Button{Point{0,0},0,0,"blue",cb_blue});
-    color_menu.attach(new Button{Point{0,0},0,0,"ink",cb_dark_blue});
-    color_menu.attach(new Button{Point{0,0},0,0,"white",cb_white});
-    color_menu.attach(new Button{Point{0,0},0,0,"black",cb_black});
-
-    line_menu.attach(new Button{Point{0,0},0,0,"solid",cb_solid});
-    line_menu.attach(new Button{Point{0,0},0,0,"dashed",cb_dash});
-    line_menu.attach(new Button{Point{0,0},0,0,"dotted",cb_dot});
-    line_menu.attach(new Button{Point{0,0},0,0,"dash-dot",cb_dashdot});
-    line_menu.attach(new Button{Point{0,0},0,0,"dashed-dot-dot",cb_dashdotdot});
+    color_menu.attach(new Button{Point{0, 0}, 0, 0, "red",
+        [](Address, Address pw) {
+            reference_to<Lines_window>(pw).red_pressed();
+        }
+    });
+    color_menu.attach(new Button{Point{0, 0}, 0, 0, "blue",
+        [](Address, Address pw) {
+            reference_to<Lines_window>(pw).blue_pressed();
+        }
+    });
+    color_menu.attach(new Button{Point{0, 0}, 0, 0, "black",
+        [](Address, Address pw) {
+            reference_to<Lines_window>(pw).black_pressed();
+        }
+    });
+    style_menu.attach(new Button{Point{0, 0}, 0, 0, "dot",
+        [](Address, Address pw) {
+            reference_to<Lines_window>(pw).dot_pressed();
+        }
+    });
+    style_menu.attach(new Button{Point{0, 0}, 0, 0, "dash",
+        [](Address, Address pw) {
+            reference_to<Lines_window>(pw).dash_pressed();
+        }
+    });
+    style_menu.attach(new Button{Point{0, 0}, 0, 0, "solid",
+        [](Address, Address pw) {
+            reference_to<Lines_window>(pw).solid_pressed();
+        }
+    });
 
     attach(color_menu);
     attach(line_menu);
