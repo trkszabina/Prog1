@@ -14,8 +14,6 @@ struct Lines_window : Graph_lib::Window
 
 	Button color_button;
 	Button linestyle_button;
-
- 	bool wait_for_button();
 	
 	static void cb_red(Address, Address pw) {reference_to<Lines_window>(pw).red_pressed();}
 	static void cb_dark_red(Address, Address pw){reference_to<Lines_window>(pw).dark_red_pressed();}
