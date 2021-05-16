@@ -1,14 +1,17 @@
-// g++ ch12drill.cpp Graph.cpp Window.cpp GUI.cpp Simple_window.cpp -o main `fltk-config --ldflags --use-images`
+// g++ ch12.cpp Graph.cpp Window.cpp GUI.cpp Simple_window.cpp -o main `fltk-config --ldflags --use-images`
+
 #include "Simple_window.h"
 #include "Graph.h"
+
 int main()
 {
 	using namespace Graph_lib;
+	
 	Point tl {100,100};
 	Simple_window win {tl,600,400,"My window"};
 	win.wait_for_button();
 
-Axis xa {Axis::x, Point{20,375}, 300, 10, "x tengely"};
+ Axis xa {Axis::x, Point{20,375}, 300, 10, "x tengely"};
  xa.set_color(Color::blue);
  xa.label.set_color(Color::blue);
  win.attach(xa);
